@@ -10,7 +10,7 @@ def collide(rct1, rct2): # 土台のRect、上に乗る鳥のRect、x速度、y�
         sky = 1
         rct2.bottom = rct1.top
 
-def start(scr): #izumi追加分　スタート画面
+def start(scr): #泉追加分　スタート画面
     fonto = pg.font.Font(None, 60)
     txt = fonto.render("Press  SPACE  to  Start  Game", True, "BLACK")
     scr.sfc.blit(txt, (0,400))
@@ -81,8 +81,8 @@ class FootFold:
 
 
 def main():
-    scr = Screen("飛べ！こうかとん", (600, 800), "ProjExD-1/ex04/pg_bg.jpg")
-    bird = Bird("ProjExD-1/fig/1.png", 2.0, (300, 400))
+    scr = Screen("飛べ！こうかとん", (600, 800), "ex04/pg_bg.jpg")
+    bird = Bird(" fig/1.png", 2.0, (300, 400))
     foot = FootFold(100, scr)
     foot1 = FootFold(300, scr)
     foot2 = FootFold(500, scr)
@@ -127,3 +127,5 @@ if __name__ == "__main__":
     main()
     pg.quit()
     sys.exit()
+
+    
