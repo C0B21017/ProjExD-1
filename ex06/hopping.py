@@ -74,7 +74,7 @@ class Bird: #こうかとん（操作可能キャラクター）クラス
 
         #y軸に動かす
         self.rct.centery += self.speed_y
-        pg.draw.rect(scr.sfc, (255, 0, 0), (self.rct.right, self.rct.centery, 20, 52))
+        pg.draw.rect(scr.sfc, (0, 255, 0), (self.rct.right, self.rct.centery, 20, 52)) #18 ジャンプゲージの色を赤から緑に変更
         pg.draw.rect(scr.sfc, (255, 255, 255), (self.rct.right, self.rct.centery, 20, 52-self.jump_power*-3))
 
     #壁と天井の判定
@@ -150,7 +150,6 @@ class Text:
 
 class Text: #テキスト表示クラス（だんだん近づいてくる機能付き）
             #今回は最終スコアの表示に使用
-
     def __init__(self, txt):
         self.txt = txt
         self.fonts = []
@@ -176,6 +175,9 @@ def main(): #メイン
     foot1 = FootFold(300, scr) #足場2
     foot2 = FootFold(500, scr) #足場3
     foot3 = FootFold(700, scr) #足場4
+
+    foots = [FootFold(x*200+100,scr) for x in range(4)]
+    
     clock = pg.time.Clock() #時間
     starttime = True #最初の床が消えるかどうかの判定
     runflag = False #スタート画面とゲーム画面の判定
